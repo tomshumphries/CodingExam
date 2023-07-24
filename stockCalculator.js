@@ -9,7 +9,7 @@ async function readJsonFile(filePath) {
             const data = JSON.parse(JSONdata);
             return data;
         }
-        catch{
+        catch (error){
             //console.error(`Error parsing the JSON: ${error}`);
             throw error;
         }
@@ -30,7 +30,7 @@ function processSku(sku, stock, transactions) {
         let matchingTransactions = transactions.filter(item => item.sku === sku);
     
         // If a matching stock item was found and there are transactions, do the computation
-        if (stockItem && matchingTransactions.length > 0) {
+        if (matchingTransactions.length > 0) {
             let originalStock = 0;
 
             if(stockItem){
@@ -72,14 +72,8 @@ function calculateStock(sku) {
     });
 }
 
+const SKUs = ["CLQ274846/07/46","INVALIDSKU/00/00", "SXB930757/87/87", "UTF434696/37/18", "JSZ454994/85/17"];
 
-
-calculateStock("CLQ274846/07/46").then(result => console.log(result)).catch(error => console.log('Error:', error));
-
-calculateStock("INVALIDSKU").then(result => console.log(result)).catch(error => console.log('Error:', error));
-
-calculateStock("SXB930757/87/87").then(result => console.log(result)).catch(error => console.log('Error:', error));
-
-calculateStock("UTF434696/37/18").then(result => console.log(result)).catch(error => console.log('Error:', error));
-
-calculateStock("JSZ454994/85/17").then(result => console.log(result)).catch(error => console.log('Error:', error));
+for(let s of SKUs) {
+    calculateStock(s).then(result => console.log(result)).catch(error => console.log('Error:', error));
+}

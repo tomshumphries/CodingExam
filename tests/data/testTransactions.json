@@ -1,0 +1,1 @@
+[{"sku":"SKU/1","type":"order","qty":50},{"sku":"SKU/1","type":"refund","qty":15},{"sku":"SKU/2","type":"refund","qty":5}, {"sku":"MRP846986/84/16","type":"order","qty":100}, {"sku":"MRP846986/84/16","type":"refund","qty":10}, {"sku":"MRP846986/84/16","type":"refund","qty":30}]

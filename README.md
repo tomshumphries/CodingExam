@@ -23,6 +23,7 @@ The solution has been presented in 2 analogous files, one javascript, one typesc
  - Several config files have been created in the root folder.
 
 These solutions offer identical functionality, and have been tested using JEST tests found in the /tests folder
+ - To switch the files to testing mode, a simple 'testFlag' variable is declared at the top. Set to true for JEST tests, false otherwise.
  - The tests operate on transactions from a new json file called 'testTransactions.json'
  - The tests focus one 4 scenarios covering the combinations of SKU's being present in:
         - Only the stock list
